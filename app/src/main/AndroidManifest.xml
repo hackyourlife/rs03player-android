@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.hackyourlife.gcn.dsp"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <application
+        android:icon="@drawable/music"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".RS03PlayerActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.dsp" />
+                <data android:pathPattern=".*\\.brstm" />
+                <data android:host="*" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".PlayerService"
+            android:exported="false"
+            android:icon="@drawable/music"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="org.hackyourlife.gcn.dsp.action.INFO" />
+                <action android:name="org.hackyourlife.gcn.dsp.action.PAUSE" />
+                <action android:name="org.hackyourlife.gcn.dsp.action.RESET" />
+                <action android:name="org.hackyourlife.gcn.dsp.action.STOP" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.hackyourlife.gcn.dsp.action.PLAY" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

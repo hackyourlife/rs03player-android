@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RS03Player</string>
+    <string name="current_file">Current file:</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+    <string name="pause">Pause</string>
+
+</resources>
